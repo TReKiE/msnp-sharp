@@ -200,7 +200,7 @@ namespace MSNPSharp.Core
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("http://");
+            stringBuilder.Append("https://");
             stringBuilder.Append(gatewayIP);
             stringBuilder.Append("/gateway/gateway.dll?");
 

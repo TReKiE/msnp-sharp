@@ -2572,7 +2572,7 @@ namespace MSNPSharpClient
 
             Contact selectedContact = treeViewFavoriteList.SelectedNode.Tag as Contact;
 
-            Process.Start("http://profile.live.com/cid-" +
+            Process.Start("https://profile.live.com/cid-" +
                 String.Format("{0:x}", selectedContact.CID) + "/");
 
         }

@@ -64,7 +64,7 @@ namespace MSNPSharpClient
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Process.Start("http://profile.live.com/cid-" + String.Format("{0:x}", pendingContact.CID) + "/");
+            Process.Start("https://profile.live.com/cid-" + String.Format("{0:x}", pendingContact.CID) + "/");
         }
 
         private void ReverseAddedForm_Load(object sender, EventArgs e)
