@@ -91,6 +91,7 @@ namespace MSNPSharpClient
             this.displayOwner = new System.Windows.Forms.PictureBox();
             this.inputTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMultiparty = new System.Windows.Forms.Button();
             this.systemLabel = new System.Windows.Forms.Label();
             this.btnActivityTest = new System.Windows.Forms.Button();
             this.btnCustomEmoticon = new System.Windows.Forms.Button();
@@ -101,7 +102,6 @@ namespace MSNPSharpClient
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.openCustomEmoticonDialog = new System.Windows.Forms.OpenFileDialog();
             this.activitiesMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnMultiparty = new System.Windows.Forms.Button();
             this.multipartyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.tsMessage.SuspendLayout();
@@ -124,8 +124,8 @@ namespace MSNPSharpClient
             // 
             // tsMessage
             // 
-            this.tsMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tsMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tsMessage.AutoSize = false;
             this.tsMessage.Dock = System.Windows.Forms.DockStyle.None;
             this.tsMessage.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -166,7 +166,7 @@ namespace MSNPSharpClient
             // 
             this.toolStripMenuItem1.Image = global::MSNPSharpClient.Properties.Resources.smiley;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.toolStripMenuItem1.Text = "Simley";
             this.toolStripMenuItem1.ToolTipText = ":)";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -175,7 +175,7 @@ namespace MSNPSharpClient
             // 
             this.bigRinToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.biggrin;
             this.bigRinToolStripMenuItem.Name = "bigRinToolStripMenuItem";
-            this.bigRinToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.bigRinToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.bigRinToolStripMenuItem.Text = "Big Grin";
             this.bigRinToolStripMenuItem.ToolTipText = ":d";
             this.bigRinToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -184,7 +184,7 @@ namespace MSNPSharpClient
             // 
             this.sadToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.sad;
             this.sadToolStripMenuItem.Name = "sadToolStripMenuItem";
-            this.sadToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.sadToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.sadToolStripMenuItem.Text = "Sad";
             this.sadToolStripMenuItem.ToolTipText = ":(";
             this.sadToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -193,7 +193,7 @@ namespace MSNPSharpClient
             // 
             this.winkToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.wink;
             this.winkToolStripMenuItem.Name = "winkToolStripMenuItem";
-            this.winkToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.winkToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.winkToolStripMenuItem.Text = "Wink";
             this.winkToolStripMenuItem.ToolTipText = ";)";
             this.winkToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -202,7 +202,7 @@ namespace MSNPSharpClient
             // 
             this.tongueOutToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.tongueout;
             this.tongueOutToolStripMenuItem.Name = "tongueOutToolStripMenuItem";
-            this.tongueOutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.tongueOutToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.tongueOutToolStripMenuItem.Text = "Tongue Out";
             this.tongueOutToolStripMenuItem.ToolTipText = ":p";
             this.tongueOutToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -339,9 +339,9 @@ namespace MSNPSharpClient
             // 
             // inputTextBox
             // 
-            this.inputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputTextBox.Location = new System.Drawing.Point(109, 31);
             this.inputTextBox.Multiline = true;
             this.inputTextBox.Name = "inputTextBox";
@@ -366,6 +366,16 @@ namespace MSNPSharpClient
             this.panel2.Size = new System.Drawing.Size(663, 272);
             this.panel2.TabIndex = 0;
             // 
+            // btnMultiparty
+            // 
+            this.btnMultiparty.Location = new System.Drawing.Point(3, 82);
+            this.btnMultiparty.Name = "btnMultiparty";
+            this.btnMultiparty.Size = new System.Drawing.Size(100, 23);
+            this.btnMultiparty.TabIndex = 6;
+            this.btnMultiparty.Text = "Multiparty chat";
+            this.btnMultiparty.UseVisualStyleBackColor = true;
+            this.btnMultiparty.Click += new System.EventHandler(this.btnMultiparty_Click);
+            // 
             // systemLabel
             // 
             this.systemLabel.AutoSize = true;
@@ -385,6 +395,7 @@ namespace MSNPSharpClient
             this.btnActivityTest.TabIndex = 4;
             this.btnActivityTest.Text = "Start Activity";
             this.btnActivityTest.UseVisualStyleBackColor = true;
+            this.btnActivityTest.Visible = false;
             this.btnActivityTest.Click += new System.EventHandler(this.btnActivityTest_Click);
             // 
             // btnCustomEmoticon
@@ -421,9 +432,9 @@ namespace MSNPSharpClient
             // 
             // richTextHistory
             // 
-            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextHistory.BackColor = System.Drawing.Color.Snow;
             this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
@@ -451,16 +462,6 @@ namespace MSNPSharpClient
             this.activitiesMenuStrip1.Name = "activitiesMenuStrip1";
             this.activitiesMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // btnMultiparty
-            // 
-            this.btnMultiparty.Location = new System.Drawing.Point(3, 82);
-            this.btnMultiparty.Name = "btnMultiparty";
-            this.btnMultiparty.Size = new System.Drawing.Size(100, 23);
-            this.btnMultiparty.TabIndex = 6;
-            this.btnMultiparty.Text = "Multiparty chat";
-            this.btnMultiparty.UseVisualStyleBackColor = true;
-            this.btnMultiparty.Click += new System.EventHandler(this.btnMultiparty_Click);
-            // 
             // multipartyMenu
             // 
             this.multipartyMenu.Name = "multipartyMenu";
@@ -474,9 +475,9 @@ namespace MSNPSharpClient
             this.Controls.Add(this.panel1);
             this.Name = "ConversationForm";
             this.Text = "Conversation - MSNPSharp";
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
             this.Load += new System.EventHandler(this.ConversationForm_Load);
             this.Shown += new System.EventHandler(this.ConversationForm_Shown);
-            this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tsMessage.ResumeLayout(false);
@@ -547,7 +548,7 @@ namespace MSNPSharpClient
                 }
                 else if (e is TextMessageArrivedEventArgs)
                 {
-                    MakeVisible(sender, e);
+                    NewMessageNotifier(sender, e);
                     PrintText(e.Sender, (e as TextMessageArrivedEventArgs).TextMessage);
                 }
                 else if (e is EmoticonArrivedEventArgs)
@@ -596,6 +597,12 @@ namespace MSNPSharpClient
                 }
             }
         }
+
+        private void NewMessageNotifier(object sender, MessageArrivedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
 
 
         /// <summary>

@@ -259,7 +259,7 @@ namespace MSNPSharpClient
 
 
             // ******* Listen traces *****
-            traceform.Show();
+            //traceform.Show();
 
             xmlSettings = UserSettings.Load("Nobody likes hardcoding!");
             accountTextBox.Text = xmlSettings.Username;
@@ -268,7 +268,6 @@ namespace MSNPSharpClient
 #endif
             NSMessageHandler.MachineGuid = new Guid(xmlSettings.MachineGuid);
             Settings.DisableHttpPolling = bool.Parse(xmlSettings.UseTcpGateway);
-            cbUseTcp.Checked = Settings.DisableHttpPolling;
 
             comboStatus.SelectedIndex = comboStatus.FindString(GetStatusString((PresenceStatus)Enum.Parse(typeof(PresenceStatus), xmlSettings.LastStatus)));
         }
@@ -2577,13 +2576,7 @@ namespace MSNPSharpClient
 
         }
 
-        private void cbUseTcp_CheckedChanged(object sender, EventArgs e)
-        {
-            xmlSettings.UseTcpGateway = cbUseTcp.Checked.ToString();
-            xmlSettings.Save();
 
-            Settings.DisableHttpPolling = cbUseTcp.Checked;
-        }
 
     }
 }
