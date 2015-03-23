@@ -372,7 +372,6 @@ namespace MSNPSharpClient
 
             syncContactListCompleted = true;
             lblNews.Text = "Getting your friends' news...";
-            messenger.WhatsUpService.GetWhatsUp(200);
         }
 
         List<ActivityDetailsType> activities = new List<ActivityDetailsType>();

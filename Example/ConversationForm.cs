@@ -503,6 +503,7 @@ namespace MSNPSharpClient
             this.Text = "Conversation - MSNPSharp";
             this.Activated += new System.EventHandler(this.ConversationForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
+            this.Shown += ConversationForm_Shown;
             this.Load += new System.EventHandler(this.ConversationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
