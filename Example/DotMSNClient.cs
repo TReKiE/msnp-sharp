@@ -259,7 +259,7 @@ namespace MSNPSharpClient
 
 
             // ******* Listen traces *****
-            //traceform.Show();
+            traceform.Show();
 
             xmlSettings = UserSettings.Load("Nobody likes hardcoding!");
             accountTextBox.Text = xmlSettings.Username;

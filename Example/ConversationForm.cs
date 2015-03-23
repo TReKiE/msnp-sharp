@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace MSNPSharpClient
 {
@@ -62,6 +63,31 @@ namespace MSNPSharpClient
         private ContextMenuStrip multipartyMenu;
         private ColorDialog dlgColor;
 
+        #region Flashing window interop code
+        [DllImport("user32.dll")]
+        static extern Int32 FlashWindowEx(ref FLASHWINFO pwfi);
+        [StructLayout(LayoutKind.Sequential)]
+        public struct FLASHWINFO
+        {
+            public UInt32 cbSize;
+            public IntPtr hwnd;
+            public Int32 dwFlags;
+            public UInt32 uCount;
+            public Int32 dwTimeout;
+        }
+        // stop flashing
+        const int FLASHW_STOP = 0;
+        // flash the window title 
+        const int FLASHW_CAPTION = 1;
+        // flash the taskbar button
+        const int FLASHW_TRAY = 2;
+        // 1 | 2
+        const int FLASHW_ALL = 3;
+        // flash continuously 
+        const int FLASHW_TIMER = 4;
+        // flash until the window comes to the foreground 
+        const int FLASHW_TIMERNOFG = 12;
+        #endregion
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -97,12 +123,12 @@ namespace MSNPSharpClient
             this.btnCustomEmoticon = new System.Windows.Forms.Button();
             this.btnSendFiles = new System.Windows.Forms.Button();
             this.displayUser = new System.Windows.Forms.PictureBox();
-            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.openCustomEmoticonDialog = new System.Windows.Forms.OpenFileDialog();
             this.activitiesMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.multipartyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.panel1.SuspendLayout();
             this.tsMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayOwner)).BeginInit();
@@ -430,24 +456,6 @@ namespace MSNPSharpClient
             this.displayUser.TabIndex = 0;
             this.displayUser.TabStop = false;
             // 
-            // richTextHistory
-            // 
-            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
-            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
-            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
-            this.richTextHistory.Name = "richTextHistory";
-            this.richTextHistory.ReadOnly = true;
-            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
-            this.richTextHistory.TabIndex = 0;
-            this.richTextHistory.TabStop = false;
-            this.richTextHistory.Text = "";
-            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
-            // 
             // openFileDialog
             // 
             this.openFileDialog.Multiselect = true;
@@ -467,6 +475,24 @@ namespace MSNPSharpClient
             this.multipartyMenu.Name = "multipartyMenu";
             this.multipartyMenu.Size = new System.Drawing.Size(61, 4);
             // 
+            // richTextHistory
+            // 
+            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
+            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
+            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
+            this.richTextHistory.Name = "richTextHistory";
+            this.richTextHistory.ReadOnly = true;
+            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
+            this.richTextHistory.TabIndex = 0;
+            this.richTextHistory.TabStop = false;
+            this.richTextHistory.Text = "";
+            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
+            // 
             // ConversationForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -475,9 +501,9 @@ namespace MSNPSharpClient
             this.Controls.Add(this.panel1);
             this.Name = "ConversationForm";
             this.Text = "Conversation - MSNPSharp";
+            this.Activated += new System.EventHandler(this.ConversationForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
             this.Load += new System.EventHandler(this.ConversationForm_Load);
-            this.Shown += new System.EventHandler(this.ConversationForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tsMessage.ResumeLayout(false);
@@ -515,7 +541,7 @@ namespace MSNPSharpClient
         public ConversationForm(Messenger messenger, Contact contact)
         {
             InitializeComponent();
-
+            this.GotFocus += ConversationForm_GotFocus;
             _messenger = messenger;
             remoteContact = contact;
 
@@ -526,6 +552,11 @@ namespace MSNPSharpClient
                 btnSendFiles.Enabled = false;
                 btnMultiparty.Enabled = false;
             }
+        }
+
+        private void ConversationForm_GotFocus(object sender, EventArgs e)
+        {
+            Flash(true);
         }
 
         public void OnMessageReceived(object sender, MessageArrivedEventArgs e)
@@ -600,9 +631,21 @@ namespace MSNPSharpClient
 
         private void NewMessageNotifier(object sender, MessageArrivedEventArgs e)
         {
-            throw new NotImplementedException();
+            Flash(false);
         }
 
+        private void Flash(bool stop)
+        {
+            FLASHWINFO fw = new FLASHWINFO();
+            fw.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(FLASHWINFO)));
+            fw.hwnd = Handle;
+            if (!stop)
+                fw.dwFlags = 2;
+            else
+                fw.dwFlags = 0;
+            fw.uCount = UInt32.MaxValue;
+            FlashWindowEx(ref fw);
+        }
 
 
         /// <summary>
@@ -1312,6 +1355,11 @@ namespace MSNPSharpClient
                     e.Via.ContactList[IMAddressInfoType.None].Count + " members now.");
             }
 
+        }
+
+        private void ConversationForm_Activated(object sender, EventArgs e)
+        {
+            Flash(true);
         }
     }
 };
