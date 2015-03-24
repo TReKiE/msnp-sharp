@@ -650,6 +650,7 @@ namespace MSNPSharpClient
             this.btnSetTheme.Tag = "0";
             this.btnSetTheme.Text = "Theme";
             this.btnSetTheme.UseVisualStyleBackColor = true;
+            this.btnSetTheme.Visible = false;
             this.btnSetTheme.Click += new System.EventHandler(this.btnSetTheme_Click);
             // 
             // btnSetMusic
@@ -661,14 +662,15 @@ namespace MSNPSharpClient
             this.btnSetMusic.Tag = "0";
             this.btnSetMusic.Text = "Music";
             this.btnSetMusic.UseVisualStyleBackColor = true;
+            this.btnSetMusic.Visible = false;
             this.btnSetMusic.Click += new System.EventHandler(this.btnSetMusic_Click);
             // 
             // lblPM
             // 
-            this.lblPM.Location = new System.Drawing.Point(66, 25);
+            this.lblPM.Location = new System.Drawing.Point(3, 25);
             this.lblPM.Multiline = true;
             this.lblPM.Name = "lblPM";
-            this.lblPM.Size = new System.Drawing.Size(197, 44);
+            this.lblPM.Size = new System.Drawing.Size(260, 44);
             this.lblPM.TabIndex = 7;
             this.lblPM.Leave += new System.EventHandler(this.lblName_Leave);
             // 
@@ -792,25 +794,25 @@ namespace MSNPSharpClient
             this.toolStripMenuItem1,
             this.tsmExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(153, 76);
+            this.cmsTray.Size = new System.Drawing.Size(105, 54);
             // 
             // tsmOpen
             // 
             this.tsmOpen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsmOpen.Name = "tsmOpen";
-            this.tsmOpen.Size = new System.Drawing.Size(152, 22);
+            this.tsmOpen.Size = new System.Drawing.Size(104, 22);
             this.tsmOpen.Text = "Open";
             this.tsmOpen.Click += new System.EventHandler(this.tsmOpen_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(101, 6);
             // 
             // tsmExit
             // 
             this.tsmExit.Name = "tsmExit";
-            this.tsmExit.Size = new System.Drawing.Size(152, 22);
+            this.tsmExit.Size = new System.Drawing.Size(104, 22);
             this.tsmExit.Text = "Exit";
             this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
             // 
