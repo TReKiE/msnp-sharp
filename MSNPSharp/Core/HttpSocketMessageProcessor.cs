@@ -87,7 +87,7 @@ namespace MSNPSharp.Core
         private string host;
 
         private Queue<QueueState> sendingQueue = new Queue<QueueState>();
-        private System.Timers.Timer pollTimer = new System.Timers.Timer(2000);
+        private System.Timers.Timer pollTimer = new System.Timers.Timer(1000);
         private object syncObject;
 
         public HttpSocketMessageProcessor(ConnectivitySettings connectivitySettings, MessagePool messagePool)
