@@ -512,6 +512,7 @@ namespace MSNPSharpClient
             this.richTextHistory.TabStop = false;
             this.richTextHistory.Text = "";
             this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
+            this.richTextHistory.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextHistory_LinkClicked);
             // 
             // ConversationForm
             // 
@@ -1394,6 +1395,11 @@ namespace MSNPSharpClient
         private void inputTextBox_Enter(object sender, EventArgs e)
         {
             Flash(true);
+        }
+
+        private void richTextHistory_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
         }
     }
 };
