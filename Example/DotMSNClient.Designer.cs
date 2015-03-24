@@ -752,7 +752,6 @@ namespace MSNPSharpClient
             // 
             // logoImageBox
             // 
-            this.logoImageBox.Image = global::MSNPSharpClient.Properties.Resources.app_banner;
             this.logoImageBox.Location = new System.Drawing.Point(0, 0);
             this.logoImageBox.Margin = new System.Windows.Forms.Padding(0);
             this.logoImageBox.Name = "logoImageBox";
