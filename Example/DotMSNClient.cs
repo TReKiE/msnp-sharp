@@ -259,6 +259,11 @@ namespace MSNPSharpClient
 
 
             // ******* Listen traces *****
+            traceform.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            traceform.ShowInTaskbar = false;
+            traceform.StartPosition = FormStartPosition.Manual;
+            traceform.Location = new System.Drawing.Point(-9000, -9000);
+            traceform.Size = new System.Drawing.Size(1, 1);
             traceform.Show();
 
             xmlSettings = UserSettings.Load("Nobody likes hardcoding!");
@@ -284,8 +289,6 @@ namespace MSNPSharpClient
                     ResetAll();
                     Messenger.Disconnect();
                 }
-
-                traceform.Close();
 
                 try
                 {
@@ -2603,6 +2606,12 @@ namespace MSNPSharpClient
         {
             Show();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void logoImageBox_DoubleClick(object sender, EventArgs e)
+        {
+            traceform.Location = new System.Drawing.Point(0, 0);
+            traceform.Size = new System.Drawing.Size(640, 480);
         }
     }
 }

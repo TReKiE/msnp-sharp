@@ -765,6 +765,7 @@ namespace MSNPSharpClient
             this.logoImageBox.Size = new System.Drawing.Size(255, 120);
             this.logoImageBox.TabIndex = 1;
             this.logoImageBox.TabStop = false;
+            this.logoImageBox.DoubleClick += new System.EventHandler(this.logoImageBox_DoubleClick);
             // 
             // statusBar
             // 
