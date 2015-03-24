@@ -73,6 +73,7 @@ namespace MSNPSharpClient
                 // Don't enable this on mono, because mono raises NotImplementedException.
                 Settings.EnableGzipCompressionForWebServices = false;
             }
+            bw.RunWorkerAsync();
 
 #if DEBUG
 
@@ -2625,9 +2626,26 @@ namespace MSNPSharpClient
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
-            ContactList m = messenger.ContactList;
+            try
+            {
+                System.Net.WebClient wc = new System.Net.WebClient();
+                string version = wc.DownloadString("http://messenger.jonathankay.com/butterflyrevived/version.aspx?ver=" + GetType().Assembly.GetName().Version.ToString());
+                if (version != "")
+                {
+                    if (MessageBox.Show("A new version of this application is available.  Would you like to download it now?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Process p = new Process();
+                        p.StartInfo = new ProcessStartInfo(version);
+                        p.Start();
+
+                        Application.Exit();
+                        
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

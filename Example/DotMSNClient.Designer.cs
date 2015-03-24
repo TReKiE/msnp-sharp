@@ -95,7 +95,7 @@ namespace MSNPSharpClient
             this.tsmOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bw = new System.ComponentModel.BackgroundWorker();
             this.userMenuStrip.SuspendLayout();
             this.sortContextMenu.SuspendLayout();
             this.groupContextMenu.SuspendLayout();
@@ -633,7 +633,6 @@ namespace MSNPSharpClient
             // 
             // pnlNameAndPM
             // 
-            this.pnlNameAndPM.Controls.Add(this.button1);
             this.pnlNameAndPM.Controls.Add(this.btnSetTheme);
             this.pnlNameAndPM.Controls.Add(this.btnSetMusic);
             this.pnlNameAndPM.Controls.Add(this.lblPM);
@@ -819,15 +818,9 @@ namespace MSNPSharpClient
             this.tsmExit.Text = "Exit";
             this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
             // 
-            // button1
+            // bw
             // 
-            this.button1.Location = new System.Drawing.Point(132, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bw.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw_DoWork);
             // 
             // ClientForm
             // 
@@ -938,6 +931,6 @@ namespace MSNPSharpClient
         private ToolStripMenuItem tsmOpen;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem tsmExit;
-        private Button button1;
+        private System.ComponentModel.BackgroundWorker bw;
     }
 }
