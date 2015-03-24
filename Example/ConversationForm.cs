@@ -123,12 +123,12 @@ namespace MSNPSharpClient
             this.btnCustomEmoticon = new System.Windows.Forms.Button();
             this.btnSendFiles = new System.Windows.Forms.Button();
             this.displayUser = new System.Windows.Forms.PictureBox();
+            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.openCustomEmoticonDialog = new System.Windows.Forms.OpenFileDialog();
             this.activitiesMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.multipartyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.panel1.SuspendLayout();
             this.tsMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayOwner)).BeginInit();
@@ -368,6 +368,7 @@ namespace MSNPSharpClient
             this.inputTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputTextBox.Location = new System.Drawing.Point(109, 31);
             this.inputTextBox.Multiline = true;
             this.inputTextBox.Name = "inputTextBox";
@@ -456,6 +457,24 @@ namespace MSNPSharpClient
             this.displayUser.TabIndex = 0;
             this.displayUser.TabStop = false;
             // 
+            // richTextHistory
+            // 
+            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
+            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
+            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
+            this.richTextHistory.Name = "richTextHistory";
+            this.richTextHistory.ReadOnly = true;
+            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
+            this.richTextHistory.TabIndex = 0;
+            this.richTextHistory.TabStop = false;
+            this.richTextHistory.Text = "";
+            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Multiselect = true;
@@ -474,24 +493,6 @@ namespace MSNPSharpClient
             // 
             this.multipartyMenu.Name = "multipartyMenu";
             this.multipartyMenu.Size = new System.Drawing.Size(61, 4);
-            // 
-            // richTextHistory
-            // 
-            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
-            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
-            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
-            this.richTextHistory.Name = "richTextHistory";
-            this.richTextHistory.ReadOnly = true;
-            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
-            this.richTextHistory.TabIndex = 0;
-            this.richTextHistory.TabStop = false;
-            this.richTextHistory.Text = "";
-            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
             // 
             // ConversationForm
             // 
