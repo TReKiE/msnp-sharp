@@ -32,6 +32,7 @@ namespace MSNPSharpClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.userMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sendIMMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +90,11 @@ namespace MSNPSharpClient
             this.displayImageBox = new System.Windows.Forms.PictureBox();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.statusBar = new System.Windows.Forms.Label();
+            this.trayicon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.userMenuStrip.SuspendLayout();
             this.sortContextMenu.SuspendLayout();
             this.groupContextMenu.SuspendLayout();
@@ -110,6 +116,7 @@ namespace MSNPSharpClient
             this.pnlNameAndPM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            this.cmsTray.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList1
@@ -769,6 +776,42 @@ namespace MSNPSharpClient
             this.statusBar.TabIndex = 10;
             this.statusBar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // trayicon
+            // 
+            this.trayicon.ContextMenuStrip = this.cmsTray;
+            this.trayicon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayicon.Icon")));
+            this.trayicon.Text = "Butterfly Revived";
+            this.trayicon.Visible = true;
+            this.trayicon.DoubleClick += new System.EventHandler(this.trayicon_DoubleClick);
+            // 
+            // cmsTray
+            // 
+            this.cmsTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmOpen,
+            this.toolStripMenuItem1,
+            this.tsmExit});
+            this.cmsTray.Name = "cmsTray";
+            this.cmsTray.Size = new System.Drawing.Size(104, 54);
+            // 
+            // tsmOpen
+            // 
+            this.tsmOpen.Name = "tsmOpen";
+            this.tsmOpen.Size = new System.Drawing.Size(103, 22);
+            this.tsmOpen.Text = "Open";
+            this.tsmOpen.Click += new System.EventHandler(this.tsmOpen_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 6);
+            // 
+            // tsmExit
+            // 
+            this.tsmExit.Name = "tsmExit";
+            this.tsmExit.Size = new System.Drawing.Size(103, 22);
+            this.tsmExit.Text = "Exit";
+            this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
@@ -782,6 +825,7 @@ namespace MSNPSharpClient
             this.Text = "Butterfly Revived";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientForm_Load);
+            this.Resize += new System.EventHandler(this.ClientForm_Resize);
             this.userMenuStrip.ResumeLayout(false);
             this.sortContextMenu.ResumeLayout(false);
             this.groupContextMenu.ResumeLayout(false);
@@ -808,6 +852,7 @@ namespace MSNPSharpClient
             this.pnlNameAndPM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            this.cmsTray.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -871,6 +916,10 @@ namespace MSNPSharpClient
         private ComboBox comboPlaces;
         private ToolStripMenuItem leaveCircleToolStripMenuItem;
         private ToolStripMenuItem liveProfileToolStripMenuItem;
-
+        private NotifyIcon trayicon;
+        private ContextMenuStrip cmsTray;
+        private ToolStripMenuItem tsmOpen;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem tsmExit;
     }
 }

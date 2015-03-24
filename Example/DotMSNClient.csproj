@@ -7,10 +7,10 @@
     <ProjectGuid>{BDF3E472-EFE8-44D6-AFB6-062DD929D56F}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>MSNPSharp_logo.ico</ApplicationIcon>
+    <ApplicationIcon>Nelson-Msn-Buddy-Icons-Msn-Butterfly.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>DotMSNClient</AssemblyName>
+    <AssemblyName>ButterflyRevived</AssemblyName>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -80,7 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MSNPSharp_logo.ico" />
+    <Content Include="Nelson-Msn-Buddy-Icons-Msn-Butterfly.ico" />
     <Content Include="Resources\facebook_logo.png" />
+    <None Include="Resources\Nelson-Msn-Buddy-Icons-Msn-Butterfly.ico" />
     <None Include="Resources\sad.png" />
     <None Include="Resources\surprised.png" />
     <None Include="Resources\smilewithtongue.png" />

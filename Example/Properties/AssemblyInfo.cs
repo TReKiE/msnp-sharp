@@ -5,16 +5,16 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisibleAttribute(false)]
 [assembly: CLSCompliantAttribute(false)]
-[assembly: AssemblyTitleAttribute("MSNPSharp Example Client")]
-[assembly: AssemblyDescriptionAttribute(".NET MSN Messenger library Example Client")]
-[assembly: AssemblyCopyrightAttribute("Copyright (c) 2002-2012, Bas Geertsema, Xih Solutions (http://www.xihsolutions.net), Thiago.Sayao, Pang Wu, Ethem Evlice, Andy Phan, Chang Liu. ")]
-[assembly: AssemblyProductAttribute("MSNPSharp")]
+[assembly: AssemblyTitle("Butterfly Revived")]
+[assembly: AssemblyDescription("Another Messenger client basedon MSNPSharp")]
+[assembly: AssemblyCopyright("Copyright (c)  2002-2012, Bas Geertsema, Xih Solutions (http://www.xihsolutions.net), Thiago.Sayao, Pang Wu, Ethem Evlice, Andy Phan, Chang Liu., Additions 2015: Jonathan Kay")]
+[assembly: AssemblyProduct("Butterfly Revived")]
 [assembly: AssemblyDelaySignAttribute(false)]
 [assembly: GuidAttribute("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC")]
 
 // Version information for an assembly consists of the following four values:
 // Major.Minor.Build.BuildDate
-[assembly: AssemblyVersionAttribute("6.0.0.00000")]
-[assembly: AssemblyFileVersionAttribute("6.0.0.00000")]
-[assembly: AssemblyCompanyAttribute("MSNPSharp")]
-[assembly: AssemblyTrademarkAttribute("MSNPSharp")]
+[assembly: AssemblyVersion("0.1.0.00000")]
+[assembly: AssemblyFileVersion("0.1.0.00000")]
+[assembly: AssemblyCompany("Jonathan Kay")]
+[assembly: AssemblyTrademark("")]

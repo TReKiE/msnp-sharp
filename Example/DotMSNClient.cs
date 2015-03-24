@@ -62,7 +62,7 @@ namespace MSNPSharpClient
             // Required for Windows Form Designer support
             //
             InitializeComponent();
-            this.Icon = Properties.Resources.MSNPSharp_logo_small_ico;
+            this.Icon = Properties.Resources.Nelson_Msn_Buddy_Icons_Msn_Butterfly;
 
             #region ----------------- SETTINGS SECTION -----------------
 
@@ -275,30 +275,37 @@ namespace MSNPSharpClient
 
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Messenger.Connected)
+            if (e.CloseReason == CloseReason.WindowsShutDown || e.CloseReason == CloseReason.ApplicationExitCall)
             {
-                Messenger.Nameserver.SignedOff -= Nameserver_SignedOff;
+                if (Messenger.Connected)
+                {
+                    Messenger.Nameserver.SignedOff -= Nameserver_SignedOff;
 
-                ResetAll();
-                Messenger.Disconnect();
+                    ResetAll();
+                    Messenger.Disconnect();
+                }
+
+                traceform.Close();
+
+                try
+                {
+                    xmlSettings.Username = accountTextBox.Text;
+                    #if SAVEPASSWORD
+                    xmlSettings.Password = passwordTextBox.Text;
+                    #endif
+                    xmlSettings.MachineGuid = NSMessageHandler.MachineGuid.ToString();
+                    xmlSettings.UseTcpGateway = Settings.DisableHttpPolling.ToString();
+                    xmlSettings.LastStatus = lastStatus.ToString();
+                    xmlSettings.Save();
+                }
+                catch (Exception)
+                {
+                }
+                return;
             }
 
-            traceform.Close();
-
-            try
-            {
-                xmlSettings.Username = accountTextBox.Text;
-#if SAVEPASSWORD
-                xmlSettings.Password = passwordTextBox.Text;
-#endif
-                xmlSettings.MachineGuid = NSMessageHandler.MachineGuid.ToString();
-                xmlSettings.UseTcpGateway = Settings.DisableHttpPolling.ToString();
-                xmlSettings.LastStatus = lastStatus.ToString();
-                xmlSettings.Save();
-            }
-            catch (Exception)
-            {
-            }
+            e.Cancel = true;
+            this.Hide();
         }
 
         private void AutoGroupMessageReply(Contact circle)
@@ -2575,7 +2582,27 @@ namespace MSNPSharpClient
 
         }
 
+        private void ClientForm_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+                Hide();
+        }
 
+        private void tsmExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void tsmOpen_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void trayicon_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
     }
 }

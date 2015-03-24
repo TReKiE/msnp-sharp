@@ -231,6 +231,16 @@ namespace MSNPSharpClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Nelson_Msn_Buddy_Icons_Msn_Butterfly {
+            get {
+                object obj = ResourceManager.GetObject("Nelson_Msn_Buddy_Icons_Msn_Butterfly", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap nudge {
