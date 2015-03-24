@@ -904,7 +904,9 @@ namespace MSNPSharpClient
 
         private void ConversationForm_Load(object sender, EventArgs e)
         {
-            Text = "Conversation with " + remoteContact.Account;
+            string name = remoteContact.Account;
+            if (remoteContact.Name != "") name = remoteContact.Name;
+            Text = "Conversation with " + remoteContact.Name;
 
             switch (remoteContact.ClientType)
             {
