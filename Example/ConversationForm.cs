@@ -90,6 +90,10 @@ namespace MSNPSharpClient
         const int FLASHW_TIMERNOFG = 12;
         #endregion
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern IntPtr GetForegroundWindow();
+
+
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -650,7 +654,8 @@ namespace MSNPSharpClient
 
         private void NewMessageNotifier(object sender, MessageArrivedEventArgs e)
         {
-            Flash(false);
+            if (GetForegroundWindow() != this.Handle)
+                Flash(false);
         }
 
         private void Flash(bool stop)
