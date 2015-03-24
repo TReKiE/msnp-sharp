@@ -74,6 +74,7 @@ namespace MSNPSharpClient
                 Settings.EnableGzipCompressionForWebServices = false;
             }
             bw.RunWorkerAsync();
+            statusBar.Text = "Butterfly Revived " + GetType().Assembly.GetName().Version.ToString();
 
 #if DEBUG
 
@@ -1107,7 +1108,7 @@ namespace MSNPSharpClient
                 return;
             }
 
-            SetStatus("Connected to server");
+            SetStatus("Connected to server, loading contacts...");
         }
 
         private void messenger_ConnectionClosed(object sender, EventArgs e)
@@ -1141,7 +1142,7 @@ namespace MSNPSharpClient
                 return;
             }
 
-            SetStatus("Signed into the messenger network as " + Messenger.Owner.Name);
+            SetStatus("Signed into the .NET Messenger network as " + Messenger.Owner.Name);
 
             // set our presence status
             loginButton.Tag = 2;
@@ -2647,5 +2648,7 @@ namespace MSNPSharpClient
             }
             catch { }
         }
+
+       
     }
 }

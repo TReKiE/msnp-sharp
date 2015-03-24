@@ -54,13 +54,6 @@ namespace MSNPSharpClient
             this.toolStripDeleteGroup = new System.Windows.Forms.ToolStripMenuItem();
             this.groupContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.WhatsUpPanel = new System.Windows.Forms.Panel();
-            this.lblNewsLink = new System.Windows.Forms.LinkLabel();
-            this.lblNews = new System.Windows.Forms.Label();
-            this.pbNewsPicture = new System.Windows.Forms.PictureBox();
-            this.cmdNext = new System.Windows.Forms.Button();
-            this.cmdPrev = new System.Windows.Forms.Button();
-            this.lblWhatsup = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -90,6 +83,13 @@ namespace MSNPSharpClient
             this.displayImageBox = new System.Windows.Forms.PictureBox();
             this.logoImageBox = new System.Windows.Forms.PictureBox();
             this.statusBar = new System.Windows.Forms.Label();
+            this.WhatsUpPanel = new System.Windows.Forms.Panel();
+            this.lblNewsLink = new System.Windows.Forms.LinkLabel();
+            this.lblNews = new System.Windows.Forms.Label();
+            this.pbNewsPicture = new System.Windows.Forms.PictureBox();
+            this.cmdNext = new System.Windows.Forms.Button();
+            this.cmdPrev = new System.Windows.Forms.Button();
+            this.lblWhatsup = new System.Windows.Forms.Label();
             this.trayicon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,8 +100,6 @@ namespace MSNPSharpClient
             this.sortContextMenu.SuspendLayout();
             this.groupContextMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.WhatsUpPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNewsPicture)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -117,6 +115,8 @@ namespace MSNPSharpClient
             this.pnlNameAndPM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).BeginInit();
+            this.WhatsUpPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNewsPicture)).BeginInit();
             this.cmsTray.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -280,103 +280,20 @@ namespace MSNPSharpClient
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.WhatsUpPanel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.statusBar, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.WhatsUpPanel, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(624, 616);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // WhatsUpPanel
-            // 
-            this.WhatsUpPanel.BackColor = System.Drawing.Color.White;
-            this.WhatsUpPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WhatsUpPanel.Controls.Add(this.lblNewsLink);
-            this.WhatsUpPanel.Controls.Add(this.lblNews);
-            this.WhatsUpPanel.Controls.Add(this.pbNewsPicture);
-            this.WhatsUpPanel.Controls.Add(this.cmdNext);
-            this.WhatsUpPanel.Controls.Add(this.cmdPrev);
-            this.WhatsUpPanel.Controls.Add(this.lblWhatsup);
-            this.WhatsUpPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.WhatsUpPanel.Location = new System.Drawing.Point(3, 533);
-            this.WhatsUpPanel.Name = "WhatsUpPanel";
-            this.WhatsUpPanel.Size = new System.Drawing.Size(618, 50);
-            this.WhatsUpPanel.TabIndex = 8;
-            this.WhatsUpPanel.Visible = false;
-            // 
-            // lblNewsLink
-            // 
-            this.lblNewsLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNewsLink.Location = new System.Drawing.Point(487, 25);
-            this.lblNewsLink.Name = "lblNewsLink";
-            this.lblNewsLink.Size = new System.Drawing.Size(69, 21);
-            this.lblNewsLink.TabIndex = 5;
-            this.lblNewsLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNewsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewsLink_LinkClicked);
-            // 
-            // lblNews
-            // 
-            this.lblNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNews.AutoEllipsis = true;
-            this.lblNews.BackColor = System.Drawing.Color.Transparent;
-            this.lblNews.Location = new System.Drawing.Point(97, 3);
-            this.lblNews.Name = "lblNews";
-            this.lblNews.Size = new System.Drawing.Size(383, 42);
-            this.lblNews.TabIndex = 4;
-            this.lblNews.Text = " *";
-            this.lblNews.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbNewsPicture
-            // 
-            this.pbNewsPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbNewsPicture.BackColor = System.Drawing.Color.Transparent;
-            this.pbNewsPicture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbNewsPicture.Location = new System.Drawing.Point(570, 1);
-            this.pbNewsPicture.Name = "pbNewsPicture";
-            this.pbNewsPicture.Size = new System.Drawing.Size(45, 45);
-            this.pbNewsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbNewsPicture.TabIndex = 3;
-            this.pbNewsPicture.TabStop = false;
-            // 
-            // cmdNext
-            // 
-            this.cmdNext.Location = new System.Drawing.Point(42, 22);
-            this.cmdNext.Name = "cmdNext";
-            this.cmdNext.Size = new System.Drawing.Size(22, 22);
-            this.cmdNext.TabIndex = 2;
-            this.cmdNext.Text = ">";
-            this.cmdNext.UseVisualStyleBackColor = true;
-            this.cmdNext.Click += new System.EventHandler(this.cmdNext_Click);
-            // 
-            // cmdPrev
-            // 
-            this.cmdPrev.Location = new System.Drawing.Point(15, 22);
-            this.cmdPrev.Name = "cmdPrev";
-            this.cmdPrev.Size = new System.Drawing.Size(22, 22);
-            this.cmdPrev.TabIndex = 1;
-            this.cmdPrev.Text = "<";
-            this.cmdPrev.UseVisualStyleBackColor = true;
-            this.cmdPrev.Click += new System.EventHandler(this.cmdPrev_Click);
-            // 
-            // lblWhatsup
-            // 
-            this.lblWhatsup.AutoSize = true;
-            this.lblWhatsup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblWhatsup.Location = new System.Drawing.Point(11, 3);
-            this.lblWhatsup.Name = "lblWhatsup";
-            this.lblWhatsup.Size = new System.Drawing.Size(66, 13);
-            this.lblWhatsup.TabIndex = 0;
-            this.lblWhatsup.Text = "What\'s Up";
             // 
             // splitContainer1
             // 
@@ -392,7 +309,7 @@ namespace MSNPSharpClient
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(618, 403);
+            this.splitContainer1.Size = new System.Drawing.Size(618, 452);
             this.splitContainer1.SplitterDistance = 244;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -406,7 +323,7 @@ namespace MSNPSharpClient
             this.propertyGrid.LineColor = System.Drawing.SystemColors.ScrollBar;
             this.propertyGrid.Location = new System.Drawing.Point(0, 0);
             this.propertyGrid.Name = "propertyGrid";
-            this.propertyGrid.Size = new System.Drawing.Size(244, 403);
+            this.propertyGrid.Size = new System.Drawing.Size(244, 452);
             this.propertyGrid.TabIndex = 5;
             // 
             // tableLayoutPanel2
@@ -423,7 +340,7 @@ namespace MSNPSharpClient
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(370, 403);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(370, 452);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // pnlTreeViewsContainer
@@ -433,7 +350,7 @@ namespace MSNPSharpClient
             this.pnlTreeViewsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTreeViewsContainer.Location = new System.Drawing.Point(3, 32);
             this.pnlTreeViewsContainer.Name = "pnlTreeViewsContainer";
-            this.pnlTreeViewsContainer.Size = new System.Drawing.Size(364, 368);
+            this.pnlTreeViewsContainer.Size = new System.Drawing.Size(364, 417);
             this.pnlTreeViewsContainer.TabIndex = 3;
             // 
             // treeViewFilterList
@@ -451,7 +368,7 @@ namespace MSNPSharpClient
             this.treeViewFilterList.ShowLines = false;
             this.treeViewFilterList.ShowPlusMinus = false;
             this.treeViewFilterList.ShowRootLines = false;
-            this.treeViewFilterList.Size = new System.Drawing.Size(364, 368);
+            this.treeViewFilterList.Size = new System.Drawing.Size(364, 417);
             this.treeViewFilterList.TabIndex = 5;
             this.treeViewFilterList.Visible = false;
             this.treeViewFilterList.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -476,7 +393,7 @@ namespace MSNPSharpClient
             this.treeViewFavoriteList.ShowLines = false;
             this.treeViewFavoriteList.ShowPlusMinus = false;
             this.treeViewFavoriteList.ShowRootLines = false;
-            this.treeViewFavoriteList.Size = new System.Drawing.Size(364, 368);
+            this.treeViewFavoriteList.Size = new System.Drawing.Size(364, 417);
             this.treeViewFavoriteList.TabIndex = 4;
             this.treeViewFavoriteList.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeViewFavoriteList_ItemDrag);
             this.treeViewFavoriteList.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -781,6 +698,88 @@ namespace MSNPSharpClient
             this.statusBar.TabIndex = 10;
             this.statusBar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // WhatsUpPanel
+            // 
+            this.WhatsUpPanel.BackColor = System.Drawing.Color.White;
+            this.WhatsUpPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WhatsUpPanel.Controls.Add(this.lblNewsLink);
+            this.WhatsUpPanel.Controls.Add(this.lblNews);
+            this.WhatsUpPanel.Controls.Add(this.pbNewsPicture);
+            this.WhatsUpPanel.Controls.Add(this.cmdNext);
+            this.WhatsUpPanel.Controls.Add(this.cmdPrev);
+            this.WhatsUpPanel.Controls.Add(this.lblWhatsup);
+            this.WhatsUpPanel.Location = new System.Drawing.Point(3, 581);
+            this.WhatsUpPanel.Name = "WhatsUpPanel";
+            this.WhatsUpPanel.Size = new System.Drawing.Size(343, 2);
+            this.WhatsUpPanel.TabIndex = 8;
+            this.WhatsUpPanel.Visible = false;
+            // 
+            // lblNewsLink
+            // 
+            this.lblNewsLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNewsLink.Location = new System.Drawing.Point(212, -23);
+            this.lblNewsLink.Name = "lblNewsLink";
+            this.lblNewsLink.Size = new System.Drawing.Size(69, 21);
+            this.lblNewsLink.TabIndex = 5;
+            this.lblNewsLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNewsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblNewsLink_LinkClicked);
+            // 
+            // lblNews
+            // 
+            this.lblNews.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNews.AutoEllipsis = true;
+            this.lblNews.BackColor = System.Drawing.Color.Transparent;
+            this.lblNews.Location = new System.Drawing.Point(97, 3);
+            this.lblNews.Name = "lblNews";
+            this.lblNews.Size = new System.Drawing.Size(108, 42);
+            this.lblNews.TabIndex = 4;
+            this.lblNews.Text = " *";
+            this.lblNews.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbNewsPicture
+            // 
+            this.pbNewsPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbNewsPicture.BackColor = System.Drawing.Color.Transparent;
+            this.pbNewsPicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbNewsPicture.Location = new System.Drawing.Point(295, 1);
+            this.pbNewsPicture.Name = "pbNewsPicture";
+            this.pbNewsPicture.Size = new System.Drawing.Size(45, 0);
+            this.pbNewsPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNewsPicture.TabIndex = 3;
+            this.pbNewsPicture.TabStop = false;
+            // 
+            // cmdNext
+            // 
+            this.cmdNext.Location = new System.Drawing.Point(42, 22);
+            this.cmdNext.Name = "cmdNext";
+            this.cmdNext.Size = new System.Drawing.Size(22, 22);
+            this.cmdNext.TabIndex = 2;
+            this.cmdNext.Text = ">";
+            this.cmdNext.UseVisualStyleBackColor = true;
+            this.cmdNext.Click += new System.EventHandler(this.cmdNext_Click);
+            // 
+            // cmdPrev
+            // 
+            this.cmdPrev.Location = new System.Drawing.Point(15, 22);
+            this.cmdPrev.Name = "cmdPrev";
+            this.cmdPrev.Size = new System.Drawing.Size(22, 22);
+            this.cmdPrev.TabIndex = 1;
+            this.cmdPrev.Text = "<";
+            this.cmdPrev.UseVisualStyleBackColor = true;
+            this.cmdPrev.Click += new System.EventHandler(this.cmdPrev_Click);
+            // 
+            // lblWhatsup
+            // 
+            this.lblWhatsup.AutoSize = true;
+            this.lblWhatsup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblWhatsup.Location = new System.Drawing.Point(11, 3);
+            this.lblWhatsup.Name = "lblWhatsup";
+            this.lblWhatsup.Size = new System.Drawing.Size(66, 13);
+            this.lblWhatsup.TabIndex = 0;
+            this.lblWhatsup.Text = "What\'s Up";
+            // 
             // trayicon
             // 
             this.trayicon.ContextMenuStrip = this.cmsTray;
@@ -841,9 +840,6 @@ namespace MSNPSharpClient
             this.groupContextMenu.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.WhatsUpPanel.ResumeLayout(false);
-            this.WhatsUpPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNewsPicture)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
@@ -862,6 +858,9 @@ namespace MSNPSharpClient
             this.pnlNameAndPM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayImageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoImageBox)).EndInit();
+            this.WhatsUpPanel.ResumeLayout(false);
+            this.WhatsUpPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNewsPicture)).EndInit();
             this.cmsTray.ResumeLayout(false);
             this.ResumeLayout(false);
 
