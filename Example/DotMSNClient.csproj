@@ -214,7 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSNPSharp\MSNPSharp.csproj">
-      <Project>{97CB2DC7-2FE8-4AF5-84D0-6B9872A5E960}</Project>
+      <Project>{97cb2dc7-2fe8-4af5-84d0-6b9872a5e960}</Project>
       <Name>MSNPSharp</Name>
     </ProjectReference>
   </ItemGroup>

@@ -500,11 +500,12 @@ namespace MSNPSharpClient
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ConversationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conversation - MSNPSharp";
             this.Activated += new System.EventHandler(this.ConversationForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
-            this.Shown += ConversationForm_Shown;
             this.Load += new System.EventHandler(this.ConversationForm_Load);
+            this.Shown += new System.EventHandler(this.ConversationForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tsMessage.ResumeLayout(false);
@@ -580,6 +581,7 @@ namespace MSNPSharpClient
                 }
                 else if (e is TextMessageArrivedEventArgs)
                 {
+                    MakeVisible(sender, e);
                     NewMessageNotifier(sender, e);
                     PrintText(e.Sender, (e as TextMessageArrivedEventArgs).TextMessage);
                 }
@@ -790,13 +792,16 @@ namespace MSNPSharpClient
 
         private void PrintText(Contact c, TextMessage message)
         {
-            richTextHistory.SelectionColor = Color.Navy;
-            richTextHistory.SelectionIndent = 0;
-            richTextHistory.AppendText("[" + DateTime.Now.ToLongTimeString() + "]" + " ");
-            richTextHistory.SelectionColor = c.Account == _messenger.Owner.Account ? Color.Blue : Color.Black;
-            richTextHistory.AppendText(c.Name + " <" + c.Account + ">" + Environment.NewLine);
+            richTextHistory.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            richTextHistory.AppendText(Environment.NewLine);
+            //richTextHistory.SelectionColor = c.Account == _messenger.Owner.Account ? Color.Blue : Color.Black;
+            richTextHistory.SelectionColor = Color.Gray;
+            richTextHistory.AppendText(c.Name + " says ");
+
+            richTextHistory.AppendText("(" + DateTime.Now.ToLongTimeString() + ")" + ": " + Environment.NewLine);
+            
             richTextHistory.SelectionColor = message.Color;
-            richTextHistory.SelectionIndent = 10;
+
             richTextHistory.AppendText(message.Text);
             richTextHistory.AppendText(Environment.NewLine);
             richTextHistory.ScrollToCaret();
@@ -911,7 +916,7 @@ namespace MSNPSharpClient
             }
             cbMessageFontName.Text = inputTextBox.Font.Name;
             cbMessageFontSize.Text = inputTextBox.Font.Size.ToString();
-            bMessageFontColor.Image = CreateImageFromColor(inputTextBox.ForeColor, inputTextBox.Size);
+            //bMessageFontColor.Image = CreateImageFromColor(inputTextBox.ForeColor, inputTextBox.Size);
 
             cbMessageFontName.Tag = cbMessageFontName.Text;
             cbMessageFontSize.Tag = cbMessageFontSize.Text;
