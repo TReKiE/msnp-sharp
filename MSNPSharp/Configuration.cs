@@ -111,7 +111,7 @@ namespace MSNPSharp
         private static bool disableP2PDirectConnections = false;
         private static bool disableHttpPolling = false;
 
-        private static string savepath = Path.GetFullPath(".");
+        private static string savepath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Butterfly Messenger");
         private static bool enableGzipCompressionForWebServices;
         private static MclSerialization serializationType;
         private static int msnTicketsCleanupInterval = 5;
