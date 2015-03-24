@@ -10,7 +10,7 @@
     <ApplicationIcon>Nelson-Msn-Buddy-Icons-Msn-Butterfly.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>ButterflyRevived</AssemblyName>
+    <AssemblyName>butmsgr</AssemblyName>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>

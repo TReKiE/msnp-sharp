@@ -784,7 +784,7 @@ namespace MSNPSharpClient
             // 
             this.trayicon.ContextMenuStrip = this.cmsTray;
             this.trayicon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayicon.Icon")));
-            this.trayicon.Text = "Butterfly Revived";
+            this.trayicon.Text = "Butterfly Messenger";
             this.trayicon.Visible = true;
             this.trayicon.DoubleClick += new System.EventHandler(this.trayicon_DoubleClick);
             // 
@@ -831,7 +831,7 @@ namespace MSNPSharpClient
             this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Butterfly Revived";
+            this.Text = "Butterfly Messenger";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.Resize += new System.EventHandler(this.ClientForm_Resize);

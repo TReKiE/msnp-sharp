@@ -16,7 +16,7 @@ namespace MSNPSharpClient
     [XmlRoot("Settings")]
     public class UserSettings : MCLSerializer
     {
-        private static string settingsdir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Butterfly Revived");
+        private static string settingsdir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Butterfly Messenger");
         private static string fileName = Path.Combine(settingsdir, "settings.mcl");
 
         private string username = "writeemailhere@example.com";

@@ -74,7 +74,7 @@ namespace MSNPSharpClient
                 Settings.EnableGzipCompressionForWebServices = false;
             }
             bw.RunWorkerAsync();
-            statusBar.Text = "Butterfly Revived " + GetType().Assembly.GetName().Version.ToString();
+            statusBar.Text = "Butterfly Messenger " + GetType().Assembly.GetName().Version.ToString();
 
 #if DEBUG
 
@@ -973,7 +973,7 @@ namespace MSNPSharpClient
                     {
                         if (convform.Visible == true)
                         {
-                            if (MessageBox.Show("You are signing out from Butterfly Revived. All windows will be closed.", "Sign out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                            if (MessageBox.Show("You are signing out from Butterfly Messenger. All windows will be closed.", "Sign out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                             {
                                 return;
                             }
@@ -2632,7 +2632,7 @@ namespace MSNPSharpClient
             try
             {
                 System.Net.WebClient wc = new System.Net.WebClient();
-                string version = wc.DownloadString("http://messenger.jonathankay.com/butterflyrevived/version.aspx?ver=" + GetType().Assembly.GetName().Version.ToString());
+                string version = wc.DownloadString("http://messenger.jonathankay.com/butmsgr/version.aspx?ver=" + GetType().Assembly.GetName().Version.ToString());
                 if (version != "")
                 {
                     if (MessageBox.Show("A new version of this application is available.  Would you like to download it now?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
