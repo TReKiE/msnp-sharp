@@ -16,9 +16,10 @@ namespace MSNPSharpClient
     [XmlRoot("Settings")]
     public class UserSettings : MCLSerializer
     {
-        private static string fileName = Path.Combine(Path.GetFullPath("."), "settings.mcl");
+        private static string settingsdir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Butterfly Revived");
+        private static string fileName = Path.Combine(settingsdir, "settings.mcl");
 
-        private string username = "testmsnpsharp@live.cn";
+        private string username = "writeemailhere@example.com";
         private string password = "tstmsnpsharp";
         private string lastStatus = "Online";
         private string useTcpGateway = "false";
@@ -99,6 +100,7 @@ namespace MSNPSharpClient
 
         public static UserSettings Load(string filePassword)
         {
+            if (!Directory.Exists(settingsdir)) Directory.CreateDirectory(settingsdir);
             return (UserSettings)LoadFromFile(fileName, MclSerialization.Cryptography | MclSerialization.Compression, typeof(UserSettings), filePassword, false);
         }
 
