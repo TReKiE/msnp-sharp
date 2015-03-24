@@ -81,6 +81,13 @@
   <ItemGroup>
     <Content Include="MSNPSharp_logo.ico" />
     <Content Include="Resources\facebook_logo.png" />
+    <None Include="Resources\sad.png" />
+    <None Include="Resources\surprised.png" />
+    <None Include="Resources\smilewithtongue.png" />
+    <None Include="Resources\winking.png" />
+    <None Include="Resources\openmouthedsmile.png" />
+    <None Include="Resources\smile.png" />
+    <None Include="Resources\smiley.png" />
     <None Include="Resources\facebook_icon.ico" />
     <None Include="app.config" />
     <None Include="Resources\Color_fontHS.png" />
