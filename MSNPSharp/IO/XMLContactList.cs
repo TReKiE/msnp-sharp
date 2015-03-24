@@ -2674,6 +2674,9 @@ namespace MSNPSharp.IO
                     contact.SetIsMessengerUser(isMessengerUser);
                     contact.SetMobileAccess(contactInfo.isMobileIMEnabled);
                     contact.UserTileURL = userTileURL;
+                    if (contactInfo.firstName != "")
+                        displayName = contactInfo.firstName + " " + contactInfo.lastName;
+
                     SetContactPhones(contact, contactInfo);
 
                     if (!string.IsNullOrEmpty(nickName) && string.IsNullOrEmpty(contact.NickName))
