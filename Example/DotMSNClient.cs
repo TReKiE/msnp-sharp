@@ -247,7 +247,7 @@ namespace MSNPSharpClient
             ImageList1.Images.Add(MSNPSharpClient.Properties.Resources.offline);
 
             Version dllVersion = messenger.GetType().Assembly.GetName().Version;
-            Text += " (v" + dllVersion.Major + "." + dllVersion.Minor + "." + dllVersion.Build + " r" + dllVersion.Revision + ")";
+            //Text += " (v" + dllVersion.Major + "." + dllVersion.Minor + "." + dllVersion.Build + " r" + dllVersion.Revision + ")";
             treeViewFavoriteList.TreeViewNodeSorter = StatusSorter.Default;
 
             SetLastStatusCombo();

@@ -388,6 +388,7 @@ namespace MSNPSharpClient
             this.inputTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.inputTextBox.Size = new System.Drawing.Size(550, 72);
             this.inputTextBox.TabIndex = 1;
+            this.inputTextBox.Enter += new System.EventHandler(this.inputTextBox_Enter);
             this.inputTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputTextBox_KeyDown);
             this.inputTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextBox_KeyPress);
             // 
@@ -408,6 +409,7 @@ namespace MSNPSharpClient
             // 
             // btnMultiparty
             // 
+            this.btnMultiparty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnMultiparty.Location = new System.Drawing.Point(6, 243);
             this.btnMultiparty.Name = "btnMultiparty";
             this.btnMultiparty.Size = new System.Drawing.Size(97, 23);
@@ -688,6 +690,7 @@ namespace MSNPSharpClient
 
         private void inputTextBox_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
+            Flash(true);
             if ((e.KeyCode == Keys.Return) && (e.Alt || e.Control || e.Shift))
             {
                 return;
@@ -1379,6 +1382,11 @@ namespace MSNPSharpClient
         }
 
         private void ConversationForm_Activated(object sender, EventArgs e)
+        {
+            Flash(true);
+        }
+
+        private void inputTextBox_Enter(object sender, EventArgs e)
         {
             Flash(true);
         }
