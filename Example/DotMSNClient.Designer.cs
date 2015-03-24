@@ -95,6 +95,7 @@ namespace MSNPSharpClient
             this.tsmOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.userMenuStrip.SuspendLayout();
             this.sortContextMenu.SuspendLayout();
             this.groupContextMenu.SuspendLayout();
@@ -560,6 +561,7 @@ namespace MSNPSharpClient
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(624, 120);
             this.tableLayoutPanel3.TabIndex = 9;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -631,6 +633,7 @@ namespace MSNPSharpClient
             // 
             // pnlNameAndPM
             // 
+            this.pnlNameAndPM.Controls.Add(this.button1);
             this.pnlNameAndPM.Controls.Add(this.btnSetTheme);
             this.pnlNameAndPM.Controls.Add(this.btnSetMusic);
             this.pnlNameAndPM.Controls.Add(this.lblPM);
@@ -816,6 +819,16 @@ namespace MSNPSharpClient
             this.tsmExit.Text = "Exit";
             this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(132, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
@@ -925,5 +938,6 @@ namespace MSNPSharpClient
         private ToolStripMenuItem tsmOpen;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem tsmExit;
+        private Button button1;
     }
 }

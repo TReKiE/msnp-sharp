@@ -971,7 +971,7 @@ namespace MSNPSharpClient
                     {
                         if (convform.Visible == true)
                         {
-                            if (MessageBox.Show("You are signing out from example client. All windows will be closed.", "Sign out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                            if (MessageBox.Show("You are signing out from Butterfly Revived. All windows will be closed.", "Sign out", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                             {
                                 return;
                             }
@@ -1199,11 +1199,12 @@ namespace MSNPSharpClient
             comboPlaces.Visible = false;
             comboPlaces.Items.Clear();
 
-            List<ConversationForm> convFormsClone = new List<ConversationForm>(ConversationForms);
-            foreach (ConversationForm convForm in convFormsClone)
-            {
-                convForm.Close();
-            }
+            // TODO: Why do we do this?
+            //List<ConversationForm> convFormsClone = new List<ConversationForm>(ConversationForms);
+            //foreach (ConversationForm convForm in convFormsClone)
+            //{
+            //    convForm.Close();
+            //}
         }
 
         private void Nameserver_ExceptionOccurred(object sender, ExceptionEventArgs e)
@@ -2617,6 +2618,16 @@ namespace MSNPSharpClient
         {
             traceform.Location = new System.Drawing.Point(0, 0);
             traceform.Size = new System.Drawing.Size(640, 480);
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ContactList m = messenger.ContactList;
         }
     }
 }
