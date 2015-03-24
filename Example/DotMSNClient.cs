@@ -557,6 +557,11 @@ namespace MSNPSharpClient
                 return;
             }
 
+            if (Messenger.Owner.PublicProfileName != null || Messenger.Owner.PublicProfileName != "")
+            {
+                Messenger.Owner.Name = Messenger.Owner.PublicProfileName;
+            }
+            Messenger.Owner.Name = Messenger.Owner.Name.Replace(" (E-mail Address Not Verified)", "");
             lblName.Text = Messenger.Owner.Name;
 
             if (Messenger.Owner.PersonalMessage != null && Messenger.Owner.PersonalMessage.Message != null)

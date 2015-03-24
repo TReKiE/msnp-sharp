@@ -1036,7 +1036,7 @@ namespace MSNPSharp
                                                 if (!String.IsNullOrEmpty(personalMessage.FriendlyName))
                                                 {
                                                     //Only Windows Live Messenger Contact has friendly name.
-                                                    routingInfo.Sender.SetName(personalMessage.FriendlyName);
+                                                    routingInfo.Sender.SetName(personalMessage.FriendlyName.Replace(" (E-mail Address Not Verified)", ""));
                                                 }
 
                                                 // UserTileLocation

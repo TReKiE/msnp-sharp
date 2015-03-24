@@ -792,24 +792,25 @@ namespace MSNPSharpClient
             this.toolStripMenuItem1,
             this.tsmExit});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(104, 54);
+            this.cmsTray.Size = new System.Drawing.Size(153, 76);
             // 
             // tsmOpen
             // 
+            this.tsmOpen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tsmOpen.Name = "tsmOpen";
-            this.tsmOpen.Size = new System.Drawing.Size(103, 22);
+            this.tsmOpen.Size = new System.Drawing.Size(152, 22);
             this.tsmOpen.Text = "Open";
             this.tsmOpen.Click += new System.EventHandler(this.tsmOpen_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmExit
             // 
             this.tsmExit.Name = "tsmExit";
-            this.tsmExit.Size = new System.Drawing.Size(103, 22);
+            this.tsmExit.Size = new System.Drawing.Size(152, 22);
             this.tsmExit.Text = "Exit";
             this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
             // 
