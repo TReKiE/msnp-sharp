@@ -398,6 +398,8 @@ namespace MSNPSharpClient
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.btnMultiparty);
             this.panel2.Controls.Add(this.systemLabel);
             this.panel2.Controls.Add(this.btnActivityTest);
@@ -990,6 +992,7 @@ namespace MSNPSharpClient
 
             _messenger.Nameserver.JoinedGroupChat += (Nameserver_JoinedGroupChat);
             _messenger.Nameserver.LeftGroupChat += (Nameserver_LeftGroupChat);
+            panel2.BackgroundImage = MSNPSharpClient.Properties.Resources.my_scene;
 
         }
 
