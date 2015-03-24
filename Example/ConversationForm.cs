@@ -126,12 +126,12 @@ namespace MSNPSharpClient
             this.btnCustomEmoticon = new System.Windows.Forms.Button();
             this.btnSendFiles = new System.Windows.Forms.Button();
             this.displayUser = new System.Windows.Forms.PictureBox();
-            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.openCustomEmoticonDialog = new System.Windows.Forms.OpenFileDialog();
             this.activitiesMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.multipartyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.richTextHistory = new MSNPSharpClient.RtfRichTextBox();
             this.panel1.SuspendLayout();
             this.tsMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayOwner)).BeginInit();
@@ -196,7 +196,7 @@ namespace MSNPSharpClient
             // 
             this.toolStripMenuItem1.Image = global::MSNPSharpClient.Properties.Resources.smile;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.toolStripMenuItem1.Text = "Simley";
             this.toolStripMenuItem1.ToolTipText = ":)";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -205,7 +205,7 @@ namespace MSNPSharpClient
             // 
             this.bigRinToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.openmouthedsmile;
             this.bigRinToolStripMenuItem.Name = "bigRinToolStripMenuItem";
-            this.bigRinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bigRinToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.bigRinToolStripMenuItem.Text = "Big Grin";
             this.bigRinToolStripMenuItem.ToolTipText = ":d";
             this.bigRinToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -214,7 +214,7 @@ namespace MSNPSharpClient
             // 
             this.sadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sadToolStripMenuItem.Image")));
             this.sadToolStripMenuItem.Name = "sadToolStripMenuItem";
-            this.sadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sadToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.sadToolStripMenuItem.Text = "Sad";
             this.sadToolStripMenuItem.ToolTipText = ":(";
             this.sadToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -223,7 +223,7 @@ namespace MSNPSharpClient
             // 
             this.winkToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.winking;
             this.winkToolStripMenuItem.Name = "winkToolStripMenuItem";
-            this.winkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.winkToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.winkToolStripMenuItem.Text = "Wink";
             this.winkToolStripMenuItem.ToolTipText = ";)";
             this.winkToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -232,7 +232,7 @@ namespace MSNPSharpClient
             // 
             this.tongueOutToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.smilewithtongue;
             this.tongueOutToolStripMenuItem.Name = "tongueOutToolStripMenuItem";
-            this.tongueOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tongueOutToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.tongueOutToolStripMenuItem.Text = "Tongue Out";
             this.tongueOutToolStripMenuItem.ToolTipText = ":p";
             this.tongueOutToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -241,7 +241,7 @@ namespace MSNPSharpClient
             // 
             this.surprisedToolStripMenuItem.Image = global::MSNPSharpClient.Properties.Resources.surprised;
             this.surprisedToolStripMenuItem.Name = "surprisedToolStripMenuItem";
-            this.surprisedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.surprisedToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.surprisedToolStripMenuItem.Text = "Surprised";
             this.surprisedToolStripMenuItem.ToolTipText = ":o";
             this.surprisedToolStripMenuItem.Click += new System.EventHandler(this.emotionDropDown_Click);
@@ -418,6 +418,7 @@ namespace MSNPSharpClient
             // 
             // systemLabel
             // 
+            this.systemLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.systemLabel.AutoSize = true;
             this.systemLabel.BackColor = System.Drawing.Color.Transparent;
             this.systemLabel.Location = new System.Drawing.Point(109, 253);
@@ -470,24 +471,6 @@ namespace MSNPSharpClient
             this.displayUser.TabIndex = 0;
             this.displayUser.TabStop = false;
             // 
-            // richTextHistory
-            // 
-            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
-            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
-            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
-            this.richTextHistory.Name = "richTextHistory";
-            this.richTextHistory.ReadOnly = true;
-            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
-            this.richTextHistory.TabIndex = 0;
-            this.richTextHistory.TabStop = false;
-            this.richTextHistory.Text = "";
-            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
-            // 
             // openFileDialog
             // 
             this.openFileDialog.Multiselect = true;
@@ -506,6 +489,24 @@ namespace MSNPSharpClient
             // 
             this.multipartyMenu.Name = "multipartyMenu";
             this.multipartyMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // richTextHistory
+            // 
+            this.richTextHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextHistory.BackColor = System.Drawing.Color.Snow;
+            this.richTextHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextHistory.HiglightColor = MSNPSharpClient.RtfRichTextBox.RtfColor.White;
+            this.richTextHistory.Location = new System.Drawing.Point(109, 3);
+            this.richTextHistory.Name = "richTextHistory";
+            this.richTextHistory.ReadOnly = true;
+            this.richTextHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextHistory.Size = new System.Drawing.Size(554, 264);
+            this.richTextHistory.TabIndex = 0;
+            this.richTextHistory.TabStop = false;
+            this.richTextHistory.Text = "";
+            this.richTextHistory.TextColor = MSNPSharpClient.RtfRichTextBox.RtfColor.Black;
             // 
             // ConversationForm
             // 
