@@ -408,9 +408,9 @@ namespace MSNPSharpClient
             // 
             // btnMultiparty
             // 
-            this.btnMultiparty.Location = new System.Drawing.Point(3, 82);
+            this.btnMultiparty.Location = new System.Drawing.Point(6, 243);
             this.btnMultiparty.Name = "btnMultiparty";
-            this.btnMultiparty.Size = new System.Drawing.Size(100, 23);
+            this.btnMultiparty.Size = new System.Drawing.Size(97, 23);
             this.btnMultiparty.TabIndex = 6;
             this.btnMultiparty.Text = "Multiparty chat";
             this.btnMultiparty.UseVisualStyleBackColor = true;
@@ -430,9 +430,9 @@ namespace MSNPSharpClient
             // 
             // btnActivityTest
             // 
-            this.btnActivityTest.Location = new System.Drawing.Point(3, 136);
+            this.btnActivityTest.Location = new System.Drawing.Point(6, 168);
             this.btnActivityTest.Name = "btnActivityTest";
-            this.btnActivityTest.Size = new System.Drawing.Size(100, 24);
+            this.btnActivityTest.Size = new System.Drawing.Size(97, 24);
             this.btnActivityTest.TabIndex = 4;
             this.btnActivityTest.Text = "Start Activity";
             this.btnActivityTest.UseVisualStyleBackColor = true;
@@ -441,9 +441,9 @@ namespace MSNPSharpClient
             // 
             // btnCustomEmoticon
             // 
-            this.btnCustomEmoticon.Location = new System.Drawing.Point(3, 41);
+            this.btnCustomEmoticon.Location = new System.Drawing.Point(6, 139);
             this.btnCustomEmoticon.Name = "btnCustomEmoticon";
-            this.btnCustomEmoticon.Size = new System.Drawing.Size(100, 23);
+            this.btnCustomEmoticon.Size = new System.Drawing.Size(97, 23);
             this.btnCustomEmoticon.TabIndex = 3;
             this.btnCustomEmoticon.Text = "Custom Emoticon...";
             this.btnCustomEmoticon.UseVisualStyleBackColor = true;
@@ -451,9 +451,9 @@ namespace MSNPSharpClient
             // 
             // btnSendFiles
             // 
-            this.btnSendFiles.Location = new System.Drawing.Point(3, 12);
+            this.btnSendFiles.Location = new System.Drawing.Point(6, 110);
             this.btnSendFiles.Name = "btnSendFiles";
-            this.btnSendFiles.Size = new System.Drawing.Size(100, 23);
+            this.btnSendFiles.Size = new System.Drawing.Size(97, 23);
             this.btnSendFiles.TabIndex = 1;
             this.btnSendFiles.Text = "Send Files...";
             this.btnSendFiles.UseVisualStyleBackColor = true;
@@ -461,10 +461,9 @@ namespace MSNPSharpClient
             // 
             // displayUser
             // 
-            this.displayUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.displayUser.BackColor = System.Drawing.Color.White;
             this.displayUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.displayUser.Location = new System.Drawing.Point(3, 166);
+            this.displayUser.Location = new System.Drawing.Point(3, 3);
             this.displayUser.Name = "displayUser";
             this.displayUser.Size = new System.Drawing.Size(100, 100);
             this.displayUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -516,7 +515,7 @@ namespace MSNPSharpClient
             this.Controls.Add(this.panel1);
             this.Name = "ConversationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Conversation - MSNPSharp";
+            this.Text = "Conversation";
             this.Activated += new System.EventHandler(this.ConversationForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.ConversationForm_Closing);
             this.Load += new System.EventHandler(this.ConversationForm_Load);
@@ -896,7 +895,7 @@ namespace MSNPSharpClient
 
         private void ConversationForm_Load(object sender, EventArgs e)
         {
-            Text = "Conversation with " + remoteContact.Account + " - MSNPSharp";
+            Text = "Conversation with " + remoteContact.Account;
 
             switch (remoteContact.ClientType)
             {

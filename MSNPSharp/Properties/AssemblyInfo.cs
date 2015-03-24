@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: CLSCompliantAttribute(false)]
 [assembly: AssemblyTitleAttribute("MSNPSharp MSN Protocol Library")]
 [assembly: AssemblyDescriptionAttribute("C# implementation of the MSN protocol")]
-[assembly: AssemblyCopyrightAttribute("Copyright (c) 2002-2012, Bas Geertsema, Xih Solutions (http://www.xihsolutions.net), Thiago.Sayao, Pang Wu, Ethem Evlice, Andy Phan, Chang Liu. ")]
+[assembly: AssemblyCopyrightAttribute("Copyright (c) 2002-2012, Bas Geertsema, Xih Solutions (http://www.xihsolutions.net), Thiago.Sayao, Pang Wu, Ethem Evlice, Andy Phan, Chang Liu. Quick and dirty fixes 2015 Jonathan Kay")]
 [assembly: AssemblyProductAttribute("MSNPSharp")]
 [assembly: AssemblyDelaySignAttribute(false)]
 
@@ -25,7 +25,7 @@ using System.Runtime.InteropServices;
 //                                   MM=MONTH(01)
 //                                    I=INCREMENTAL(monthly): (1-9) FOR STABLE
 // Ex: 12042: on 2012(12), APRIL(04), 2ND release
-[assembly: AssemblyVersionAttribute("6.0.0.00000")]
-[assembly: AssemblyFileVersionAttribute("6.0.0.00000")]
+[assembly: AssemblyVersionAttribute("6.0.1.00000")]
+[assembly: AssemblyFileVersionAttribute("6.0.1.00000")]
 [assembly: AssemblyCompanyAttribute("MSNPSharp")]
 [assembly: AssemblyTrademarkAttribute("MSNPSharp")]
