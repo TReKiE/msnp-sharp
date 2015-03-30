@@ -621,7 +621,7 @@ namespace MSNPSharpClient
                         emo.OpenStream().Read(byt, 0, byt.Length);
                         ms.Write(byt, 0, byt.Length);
 
-                        richTextHistory.Emotions[emo.Shortcut] = new Bitmap(Image.FromStream(ms));
+                        richTextHistory.Emotions[emo.Shortcut] = Image.FromStream(ms);
 
                         ms.Close();
                     }

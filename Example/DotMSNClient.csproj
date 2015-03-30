@@ -219,6 +219,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>TraceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="TRichTextBox.cs">
+      <SubType>component</SubType>
+    </Compile>
     <Compile Include="UserSettings.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotMSNClient", "Example\Dot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSNPSharp", "MSNPSharp\MSNPSharp.csproj", "{97CB2DC7-2FE8-4AF5-84D0-6B9872A5E960}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ButterflySetup", "ButterflySetup\ButterflySetup.vdproj", "{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = MSNPSharp.vsmdi
@@ -38,6 +40,12 @@ Global
 		{97CB2DC7-2FE8-4AF5-84D0-6B9872A5E960}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{97CB2DC7-2FE8-4AF5-84D0-6B9872A5E960}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{97CB2DC7-2FE8-4AF5-84D0-6B9872A5E960}.Release|Win32.ActiveCfg = Release|Any CPU
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Debug|Any CPU.ActiveCfg = Debug
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Debug|Win32.ActiveCfg = Debug
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Release|Any CPU.ActiveCfg = Release
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Release|Mixed Platforms.ActiveCfg = Release
+		{AFFF5859-BE68-4CFC-8962-FEAD7F5295B6}.Release|Win32.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

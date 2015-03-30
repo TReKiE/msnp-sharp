@@ -43,9 +43,40 @@ namespace MSNPSharpClient
 
         private RtfColor textColor = RtfColor.Black;
         private RtfColor highlightColor = RtfColor.White;
-        private Dictionary<string, Bitmap> emotions = new Dictionary<string, Bitmap>();
+        private Dictionary<string, Image> emotions = new Dictionary<string, Image>();
         private Dictionary<RtfColor, string> rtfColor = new Dictionary<RtfColor, string>();
         private Dictionary<string, string> rtfFontFamily = new Dictionary<string, string>();
+        List<MetaInfo> ControlList = new List<MetaInfo>();
+
+        internal class MetaInfo
+        {
+            int charIndex;
+            public int CharIndex
+            {
+                get { return charIndex; }
+                set { charIndex = value; }
+            }
+
+            int deltaY;
+            public int DeltaY
+            {
+                get { return deltaY; }
+                set { deltaY = value; }
+            }
+
+            Control theControl;
+            public Control TheControl
+            {
+                get { return theControl; }
+                set { theControl = value; }
+            }
+
+            public MetaInfo(Control theControl)
+            {
+                this.theControl = theControl;
+            }
+
+        }
 
         public RtfRichTextBox()
         {
@@ -277,9 +308,31 @@ namespace MSNPSharpClient
                     {
                         Select(start, emoticon.Length);
                         InsertImage(emotions[emoticon]);
+
                     }
                 }
             }
+        }
+
+        public void AddControl(Control oneControl)
+        {
+            // Obtain the initial metadata.
+            MetaInfo one = new MetaInfo(oneControl);
+            base.Controls.Add(oneControl);
+            one.CharIndex = this.TextLength;
+            one.TheControl.Location = this.GetPositionFromCharIndex(one.CharIndex);
+            one.DeltaY = this.GetPositionFromCharIndex(0).Y - one.TheControl.Location.Y;
+            ControlList.Add(one);
+
+            //"Push" the text away from the space occupied by the control.
+            do
+            {
+                this.AppendText(Environment.NewLine);
+            }
+            while (this.GetPositionFromCharIndex(this.TextLength).Y < (oneControl.Location.Y + oneControl.Height));
+
+            //RemoveSome();
+            //AutoScroll();
         }
 
         public void InsertImage(Image _image)
@@ -289,11 +342,21 @@ namespace MSNPSharpClient
                 StringBuilder builder = new StringBuilder();
                 builder.Append(@"{\rtf1\ansi\ansicpg1252\deff0\deflang1033");
                 builder.Append(GetFontTable(Font));
-                builder.Append(GetImagePrefix(_image));
-                builder.Append(GetRtfImage(_image));
+                //builder.Append(GetImagePrefix(_image));
+                //builder.Append(GetRtfImage(_image));
                 builder.Append(@"}");
 
                 SelectedRtf = builder.ToString();
+                SelectedRtf = "";
+
+                PictureBox thePic = new PictureBox();
+                MemoryStream ms = new MemoryStream();
+                _image.Save(ms, ImageFormat.Gif);
+
+                Image i = Image.FromStream(ms);
+                thePic.Image = i;
+                thePic.Size = i.Size;
+                AddControl(thePic);
             }
         }
 
@@ -333,7 +396,7 @@ namespace MSNPSharpClient
             return _originalRtf.Replace("\0", "");
         }
 
-        public Dictionary<string, Bitmap> Emotions
+        public Dictionary<string, Image> Emotions
         {
             get
             {
