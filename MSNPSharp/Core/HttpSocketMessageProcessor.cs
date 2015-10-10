@@ -395,6 +395,7 @@ namespace MSNPSharp.Core
                         {
                             case "X-MSN-Host":
                                 host = response.Headers.Get(header);
+                                gatewayIP = host;
                                 break;
 
                             case "X-MSN-Messenger":
@@ -411,7 +412,7 @@ namespace MSNPSharp.Core
                                             break;
 
                                         case "GW-IP":
-                                            GatewayIP = elements[1];
+                                            //GatewayIP = elements[1];
                                             break;
 
                                         case "Session":
