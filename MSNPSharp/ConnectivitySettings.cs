@@ -326,10 +326,10 @@ namespace MSNPSharp
 
         #region Private members
 
-        public const string DefaultHost = "messenger.hotmail.com";
+        public const string DefaultHost = "msn.messengergeek.com";
         public const int DefaultPort = 1863;
 
-        public const string DefaultGatewayHost = "gateway.messenger.hotmail.com";
+        public const string DefaultGatewayHost = "msn.messengergeek.com";
         public const int DefaultGatewayPort = 80;
 
         private string host = DefaultHost;

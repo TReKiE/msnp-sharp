@@ -2631,19 +2631,21 @@ namespace MSNPSharpClient
         {
             try
             {
+                string msifolder = Path.Combine(UserSettings.settingsdir, "Updates");
                 System.Net.WebClient wc = new System.Net.WebClient();
-                string version = wc.DownloadString("http://messenger.jonathankay.com/butmsgr/version.aspx?ver=" + GetType().Assembly.GetName().Version.ToString());
-                if (version != "")
+                string version = wc.DownloadString("http://messenger.jonathankay.com/butmsgr/ver.aspx?ver=" + GetType().Assembly.GetName().Version.ToString());
+                if (version != "" && version.StartsWith("http"))
                 {
-                    if (MessageBox.Show("A new version of this application is available.  Would you like to download it now?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        Process p = new Process();
-                        p.StartInfo = new ProcessStartInfo(version);
-                        p.Start();
+                    string[] versplit = version.Split(',');
+                    string msipath = versplit[0];
+                    string md5 = versplit[1];
 
-                        Application.Exit();
-                        
-                    }
+                    WebClient wd = new WebClient();
+                    wd.DownloadFile(msipath, Path.Combine(msifolder, "butmsgr.msi"));
+
+                    // TODO: Check MD5
+                    // TODO: Button visibility
+
                 }
             }
             catch { }
